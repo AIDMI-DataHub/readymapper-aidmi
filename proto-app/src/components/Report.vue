@@ -44,7 +44,7 @@
       />
 
       <footer class="footer" v-if="reportCreatedOn">
-        <p>CrisisReady is a research response platform at the Harvard Data Science Initiative and Direct Relief that advances data-driven decision making in emergency response. Contact us at <a href="mailto:info.crisisready.io?subject=ReadyMapper Contact">info.crisisready.io</a> to get in touch.</p>
+        <p>ReadyMapper is a disaster mapping platform from CrisisReady, a research response initiative of the Harvard Data Science Initiative and Direct Relief. This deployment was prepared by the All India Disaster Mitigation Institute (AIDMI). For this map or the data behind it, contact <a href="mailto:support@aidmi.org?subject=ReadyMapper Nepal Floods">support@aidmi.org</a>.</p>
         <p>
           Report created on {{ reportCreatedOn }}
         </p>
