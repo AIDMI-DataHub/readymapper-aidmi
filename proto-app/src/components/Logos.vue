@@ -42,7 +42,7 @@ export default {
 
 /* the source PNG has wide margins, so it's shown taller to balance the wordmark */
 .logo-aidmi {
-  height: 92px;
+  height: 116px;
 }
 
 .logo-cr {
