@@ -87,6 +87,7 @@ export default createStore({
     regionTypeSelection: 'places', // counties, places
     generateReportModalVisible: false,
     aboutModalVisible: false,
+    dataSourcesModalVisible: false,
     pickMapViewScreen: false,
     reportVisible: false,
     reportLoading: false,
@@ -1304,6 +1305,10 @@ export default createStore({
 
     setAboutModalVisible(state, visible) {
       state.aboutModalVisible = visible
+    },
+
+    setDataSourcesModalVisible(state, visible) {
+      state.dataSourcesModalVisible = visible
     },
 
     setPickMapViewScreen(state, visible) {

@@ -26,6 +26,10 @@
           <button><img src="@/assets/img/info-icon.svg" /></button>
           <a v-if="navbarOpen">About ReadyMapper</a>
         </div>
+        <div class="contact-info" @click="setDataSourcesModalVisible(true)" title="Data & sources">
+          <button><img src="@/assets/img/info-icon.svg" /></button>
+          <a v-if="navbarOpen">Data &amp; sources</a>
+        </div>
         <div v-if="navbarOpen" class="mode-tabs" style="margin-bottom: 16px">
           <button v-if="archiveMode" :class="['mode-tab', { 'mode-tab-active': !archiveMode }]" @click="archiveMode = false">
             Main Navigation
@@ -120,7 +124,8 @@ export default {
   methods: {
     ...mapMutations([
       'setNavbarOpen',
-      'setAboutModalVisible'
+      'setAboutModalVisible',
+      'setDataSourcesModalVisible'
     ]),
 
     toggleOpen() {

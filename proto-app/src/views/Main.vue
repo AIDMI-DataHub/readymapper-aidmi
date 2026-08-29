@@ -20,6 +20,7 @@
     <PickMapViewScreen />
 
     <AboutModal />
+    <DataSourcesModal />
 
     <Report v-if="reportVisible" />
 
@@ -48,6 +49,7 @@ import GenerateReportModal from '../components/GenerateReportModal.vue'
 import GenerateReportButton from '../components/GenerateReportButton.vue'
 import PickMapViewScreen from '../components/PickMapViewScreen.vue'
 import AboutModal from '../components/AboutModal.vue'
+import DataSourcesModal from '../components/DataSourcesModal.vue'
 import MobilityFlowsCanvas from '../components/MobilityFlowsCanvas.vue'
 import HurricaneForecastCanvas from '../components/HurricaneForecastCanvas.vue'
 import IsochronesLayerController from '../components/IsochronesLayerController.vue'
@@ -76,6 +78,7 @@ export default {
     GenerateReportModal,
     PickMapViewScreen,
     AboutModal,
+    DataSourcesModal,
     Timeslider,
     LoadingSpinner,
     LoadingBarsButton,
