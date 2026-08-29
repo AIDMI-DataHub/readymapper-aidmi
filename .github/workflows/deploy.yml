@@ -1,0 +1,68 @@
+name: Deploy to GitHub Pages
+
+# Builds the ReadyMapper app, bundles the committed Nepal data, injects the Mapbox
+# token from a repo secret (never committed), and deploys to GitHub Pages.
+# Actions is free/unlimited for public repos, so this consumes no metered minutes.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: proto-app/package-lock.json
+
+      - name: Install dependencies
+        working-directory: proto-app
+        run: npm ci
+
+      - name: Build
+        working-directory: proto-app
+        run: npx vite build --base=/readymapper-aidmi/
+
+      - name: Assemble site (built app + bundled data + runtime config)
+        env:
+          MAPBOX_TOKEN: ${{ secrets.MAPBOX_TOKEN }}
+        run: |
+          mkdir -p site
+          cp -R proto-app/dist/. site/
+          cp -R data site/data
+          touch site/.nojekyll
+          # config.json is generated here so the Mapbox token stays out of the repo.
+          # jq --arg keeps the token off the command line and out of the logs.
+          jq -n --arg tok "$MAPBOX_TOKEN" \
+            '{s3:{cloudfrontBaseUrl:"/readymapper-aidmi/data",outputFolder:"output"},
+              mapbox:{accessToken:$tok,styleUrl:"mapbox://styles/crisisready/cmmkzxpkm001401sbbnvxacig"}}' \
+            > site/config.json
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

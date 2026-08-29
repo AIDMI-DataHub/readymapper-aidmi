@@ -1,6 +1,7 @@
 node_modules/
 proto-app/node_modules/
 proto-app/dist/
+site/
 .env
 .DS_Store
 proto-app/public/config.json
