@@ -1,7 +1,11 @@
 <template>
   <div class="logos">
-    <a href="https://crisisready.io/">
-      <img class="logo" src="@/assets/img/crisis-ready-logo-lg.png">
+    <a href="https://www.aidmi.org/" class="logo-link">
+      <img class="logo logo-aidmi" src="@/assets/img/aidmi-logo.png" alt="All India Disaster Mitigation Institute">
+    </a>
+    <span class="logo-sep" aria-hidden="true"></span>
+    <a href="https://crisisready.io/" class="logo-link">
+      <img class="logo logo-cr" src="@/assets/img/crisis-ready-logo-lg.png" alt="CrisisReady">
     </a>
   </div>
 </template>
@@ -16,32 +20,33 @@ export default {
 .logos {
   display: flex;
   align-items: center;
-
-  a {
-    height: 100%;
-  }
-
-  img {
-    max-width: 400px;
-  }
+  gap: 22px;
 }
 
-.logos-sub {
+.logo-link {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  border-left: 2px solid variables.$light-grey;
-  margin-left: 1em;
-  padding-left: 1em;
+  height: 100%;
+}
 
-  a {
-    &:last-child {
-      padding-top: 8px;
-    }
-  }
+.logo-sep {
+  width: 1px;
+  align-self: stretch;
+  min-height: 44px;
+  background: variables.$light-grey;
 }
 
 .logo {
-  height: 100%;
+  width: auto;
+}
+
+/* the source PNG has wide margins, so it's shown taller to balance the wordmark */
+.logo-aidmi {
+  height: 92px;
+}
+
+.logo-cr {
+  height: 48px;
+  max-width: 360px;
 }
 </style>
