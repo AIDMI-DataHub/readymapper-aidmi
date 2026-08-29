@@ -1,0 +1,65 @@
+<template>
+  <section class="section disaster">
+    <div class="chunk">
+      <div class="main-section-title">Disaster</div>
+    </div>
+
+    <ReportDisasterSectionFire :dateHeader="dateHeader" v-if="disasterType === 'fire'" />
+    <ReportDisasterSectionHurricane :dateHeader="dateHeader" v-if="disasterType === 'hurricane'" />
+    <ReportDisasterSectionFlood :dateHeader="dateHeader" v-if="disasterType === 'flood'" />
+
+    <div class="chunk">
+      <ReportNotes :id="'disaster'"/>
+    </div>
+  </section>
+</template>
+
+<script>
+  import { mapState, mapGetters, mapMutations } from 'vuex'
+
+  // import { settings } from '../../constants/settings'
+
+  import ReportDisasterSectionFire from './ReportDisasterSectionFire.vue'
+  import ReportDisasterSectionHurricane from './ReportDisasterSectionHurricane.vue'
+  import ReportDisasterSectionFlood from './ReportDisasterSectionFlood.vue'
+  import ReportNotes from './ReportNotes.vue'
+
+  export default {
+    name: 'ReportDisasterSection',
+
+    components: {
+      ReportDisasterSectionFire,
+      ReportDisasterSectionHurricane,
+      ReportDisasterSectionFlood,
+      ReportNotes
+    },
+
+    props: {
+      dateHeader: String,
+    },
+
+    data() {
+      return {
+      }
+    },
+
+    computed: {
+      ...mapGetters([
+      ]),
+      ...mapState([
+        'disasterConfig',
+      ]),
+      disasterType() {
+        return this.disasterConfig?.type
+      }
+    },
+
+    methods: {
+      ...mapMutations([
+      ]),
+    },
+  }
+</script>
+
+<style lang="scss">
+</style>

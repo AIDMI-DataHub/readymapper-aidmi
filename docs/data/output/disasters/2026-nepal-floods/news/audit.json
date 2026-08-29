@@ -1,0 +1,78 @@
+{
+ "note": "Derived from unplaced.csv + multi-district.csv + national.json for the News Sources report section.",
+ "unplaced": {
+  "count": 36,
+  "by_geo_basis": {
+   "not_stated": 6,
+   "text_explicit": 26,
+   "text_adjacent": 2,
+   "gazetteer_match": 1,
+   "inferred": 1
+  },
+  "by_admin_level": {
+   "district": 18,
+   "settlement": 18
+  },
+  "by_table": {
+   "people_aggregate": 8,
+   "aid_delivery": 1,
+   "infrastructure": 5,
+   "access": 3,
+   "hazard_watch": 19
+  },
+  "examples": [
+   {
+    "table": "people_aggregate",
+    "statement": "No location could be resolved from \"at least three villages\"",
+    "fact": "displaced"
+   },
+   {
+    "table": "people_aggregate",
+    "statement": "No location could be resolved from \"worst-hit region around Trishuli\"",
+    "fact": "found_alive"
+   },
+   {
+    "table": "people_aggregate",
+    "statement": "No location could be resolved from \"worst-hit region around Trishuli\"",
+    "fact": "found_alive"
+   },
+   {
+    "table": "people_aggregate",
+    "statement": "No location could be resolved from \"त्रिशूली हाइड्रोपावर टनल\"",
+    "fact": "rescued"
+   },
+   {
+    "table": "people_aggregate",
+    "statement": "No location could be resolved from \"त्रिशूली हाइड्रो प्रोजेक्ट\"",
+    "fact": "rescued"
+   },
+   {
+    "table": "people_aggregate",
+    "statement": "No location could be resolved from \"hydropower plant (unnamed, flood-affected area)\"",
+    "fact": "stranded"
+   },
+   {
+    "table": "people_aggregate",
+    "statement": "No location could be resolved from \"hydropower plant tunnel, country's worst-hit district\"",
+    "fact": "stranded"
+   },
+   {
+    "table": "people_aggregate",
+    "statement": "No location could be resolved from \"hydropower plant tunnel, Nepal's worst-hit district\"",
+    "fact": "stranded"
+   }
+  ]
+ },
+ "multi_district": {
+  "count": 43,
+  "by_table": {
+   "people_aggregate": 14,
+   "aid_delivery": 7,
+   "infrastructure": 14,
+   "access": 1,
+   "hazard_watch": 3,
+   "damage_extent": 4
+  }
+ },
+ "national_count": 827
+}

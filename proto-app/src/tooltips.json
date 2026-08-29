@@ -1,0 +1,34 @@
+{
+  "flood-gauge-severity": {
+    "text": "Gauge severity is based on water level forecasts from the Google FloodHub API. Affected gauges are always visible; unaffected gauges appear as you zoom in. Forecasted trend displays the forecast for the next day relative to the current day.",
+    "metadataKey": "gauges"
+  },
+  "flood-inundation": {
+    "text": "Inundation forecasts show predicted flood extent based on gauge readings. Data is sporadic and will not appear for many flood events and moments in time.",
+    "metadataKey": "gauges"
+  },
+  "flood-gauge-severity-average": {
+    "text": "Average gauge severity for all affected gauges on the map over the course of the flood event.",
+    "metadataKey": "gauges"
+  },
+  "points-of-interest": {
+    "text": "Airports appear at the country level; hospitals and schools appear as you zoom in.",
+    "metadataKey": "infrastructure"
+  },
+  "water-infra": {
+    "text": "Hydropower plants and dams appear as you zoom in.",
+    "metadataKey": "infrastructure"
+  },
+  "vulnerable-populations": {
+    "text": "Vulnerable populations by admin boundaries from WorldPop. Data appears as you zoom into the country of interest.",
+    "metadataKey": "vulnerability"
+  },
+  "movement": {
+    "text": "Average movement per day to and from an area. Data appears where available as you zoom in.",
+    "metadataKey": "movement"
+  },
+  "heat-risk-level": {
+    "text": "This is a proof of concept layer based on an API by the Harvard team.",
+    "metadataKey": "heat-risk"
+  }
+}

@@ -1,0 +1,6 @@
+node_modules/
+proto-app/node_modules/
+proto-app/dist/
+.env
+.DS_Store
+proto-app/public/config.json

@@ -1,0 +1,166 @@
+<template>
+  <div
+    :class="`map-nav-overlay
+      ${navbarOpen ? 'nav-open' : 'nav-closed'}
+      ${pickMapViewScreen ? 'hidden' : ''}
+    `"
+  >
+
+    <div class="flex-section">
+
+      <div class="map-nav-section">
+        <DisasterTitleBar />
+        <TabSelection />
+
+        <div class="overflow" v-show="currentTab !== 'settings' && currentTab !== 'custom' && currentTab !== 'news'">
+          <DisasterLegend />
+          <Legend
+            :disasterDateEnd="disasterDateEnd"
+            :disasterDateStart="disasterDateStart"
+          />
+          <RegionTypeSelection />
+          <SelectionSummary />
+        </div>
+
+        <div class="overflow" v-show="currentTab === 'news'">
+          <NewsSourcesPanel />
+        </div>
+
+        <div class="overflow" v-show="currentTab === 'custom'">
+          <ComposeTab />
+        </div>
+
+        <div class="overflow" v-show="currentTab === 'settings'">
+          <SettingsTab />
+        </div>
+      </div>
+
+      <div class="map-nav-footer" />
+
+    </div>
+
+  </div>
+</template>
+
+<script>
+import { mapState, mapGetters, mapMutations } from 'vuex'
+
+import Legend from '../components/Legend.vue'
+import DisasterLegend from '../components/DisasterLegend.vue'
+import SelectionSummary from '../components/SelectionSummary.vue'
+import RegionTypeSelection from './RegionTypeSelection.vue'
+import DisasterTitleBar from './DisasterTitleBar.vue'
+import TabSelection from './TabSelection.vue'
+import SettingsTab from './SettingsTab.vue'
+import ComposeTab from './ComposeTab.vue'
+import NewsSourcesPanel from './NewsSourcesPanel.vue'
+
+export default {
+  name: 'MapMenu',
+
+  components: {
+    Legend,
+    DisasterLegend,
+    SelectionSummary,
+    RegionTypeSelection,
+    TabSelection,
+    DisasterTitleBar,
+    SettingsTab,
+    ComposeTab,
+    NewsSourcesPanel
+  },
+
+  data() {
+    return {
+    }
+  },
+
+  computed: {
+    ...mapState([
+      'currentTab',
+      'navbarOpen',
+      'pickMapViewScreen',
+    ]),
+    ...mapGetters([
+      'disasterDateStart',
+      'disasterDateEnd',
+    ])
+  },
+
+  watch: {
+
+  },
+
+  methods: {
+    ...mapMutations([
+    ]),
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+@use '../variables.scss';
+
+.nav-open {
+  left: variables.$nav-bar-width + variables.$nav-bar-gap;
+}
+
+.nav-closed {
+  left: variables.$nav-bar-closed-width + variables.$nav-bar-gap;
+}
+
+.map-nav-overlay {
+  position: absolute;
+  z-index: 1;
+  top: variables.$map-nav-top;
+  bottom: 0;
+  width: variables.$map-menu-width;
+  pointer-events: none;
+
+  .flex-section {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  .map-nav-section {
+    position: relative;
+    background: #fff;
+    box-shadow: 0px 0px 8px rgba(73, 73, 73, 0.25);
+    border-radius: 6px;
+    margin-bottom: 15px;
+    text-align: left;
+    pointer-events: all;
+
+    &.bottom-section {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    &:last-child {
+      margin-bottom: 0px;
+    }
+  }
+
+  .overflow {
+    overflow-y: auto;
+    overflow-x: hidden;
+    pointer-events: all;
+    max-height: calc(100vh - variables.$map-nav-top - variables.$disaster-title-bar-height - variables.$tabs-height - 40px);
+  }
+
+  .map-nav-footer {
+    height: 26px;
+    background: transparent;
+  }
+}
+
+.hidden {
+  visibility: hidden;
+}
+</style>

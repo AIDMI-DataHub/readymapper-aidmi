@@ -1,0 +1,94 @@
+{
+ "source": "UNOSAT (Intl. Charter #1052, FL20260826NPL)",
+ "population_data": "WorldPop 2026",
+ "boundaries": "Survey Department of Nepal",
+ "as_of": "2026-08-26/27",
+ "total": {
+  "analysed_area_km2": 330.55,
+  "total_pop": 72177.92,
+  "flood_extent_km2": 32.59,
+  "pop_exposed": 6473.54
+ },
+ "rows": [
+  {
+   "name": "Nuwakot",
+   "level": "district",
+   "analysed_area_km2": 102.86,
+   "total_pop": 52265,
+   "flood_extent_km2": 10.67,
+   "pop_exposed": 4558
+  },
+  {
+   "name": "Belkotgadhi",
+   "level": "municipality",
+   "analysed_area_km2": 19.78,
+   "total_pop": 5795,
+   "flood_extent_km2": 2.31,
+   "pop_exposed": 348
+  },
+  {
+   "name": "Bidur",
+   "level": "municipality",
+   "analysed_area_km2": 62.07,
+   "total_pop": 40300,
+   "flood_extent_km2": 6.81,
+   "pop_exposed": 3853
+  },
+  {
+   "name": "Kispang",
+   "level": "municipality",
+   "analysed_area_km2": 6.16,
+   "total_pop": 2792,
+   "flood_extent_km2": 0.64,
+   "pop_exposed": 170
+  },
+  {
+   "name": "Tarakeshwor",
+   "level": "municipality",
+   "analysed_area_km2": 14.85,
+   "total_pop": 3376,
+   "flood_extent_km2": 0.92,
+   "pop_exposed": 188
+  },
+  {
+   "name": "Rasuwa",
+   "level": "district",
+   "analysed_area_km2": 227.69,
+   "total_pop": 19912,
+   "flood_extent_km2": 21.92,
+   "pop_exposed": 1915
+  },
+  {
+   "name": "Aamachhodingmo",
+   "level": "municipality",
+   "analysed_area_km2": 27.14,
+   "total_pop": 2596,
+   "flood_extent_km2": 1.05,
+   "pop_exposed": 31
+  },
+  {
+   "name": "Gosaikunda",
+   "level": "municipality",
+   "analysed_area_km2": 149.35,
+   "total_pop": 5970,
+   "flood_extent_km2": 17.6,
+   "pop_exposed": 1162
+  },
+  {
+   "name": "Kalika",
+   "level": "municipality",
+   "analysed_area_km2": 18.49,
+   "total_pop": 3970,
+   "flood_extent_km2": 0.75,
+   "pop_exposed": 57
+  },
+  {
+   "name": "Uttargaya",
+   "level": "municipality",
+   "analysed_area_km2": 32.71,
+   "total_pop": 7375,
+   "flood_extent_km2": 2.52,
+   "pop_exposed": 665
+  }
+ ]
+}

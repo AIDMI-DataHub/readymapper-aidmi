@@ -1,0 +1,32 @@
+[
+  {
+    "id": "2026-nepal-floods",
+    "name": "Rasuwa & Nuwakot",
+    "type": "flood",
+    "lng": 85.35,
+    "lat": 28.05,
+    "zoom": 9,
+    "dateStart": "2026-08-24 00:00",
+    "dateEnd": "2026-08-29 00:00",
+    "dataTimeZone": "UTC",
+    "displayTimeZone": "Asia/Kathmandu",
+    "dataReportingIntervalHours": 8,
+    "usStatesAffected": null,
+    "swLng": 84.9,
+    "swLat": 27.7,
+    "neLng": 85.85,
+    "neLat": 28.45,
+    "isPublic": null,
+    "isArchived": null,
+    "default": null,
+    "censusVintage": 2020,
+    "wfigsIncidentName": null,
+    "nhcStormId": null,
+    "storm_id": null,
+    "isOngoing": "checked",
+    "isInternational": "checked",
+    "isoCodes": "NP",
+    "adminBoundaryLevels": null,
+    "hasNewsSources": "checked"
+  }
+]

@@ -1,0 +1,34 @@
+{
+  "gauges": {
+    "source_name": "Google Flood Forecasting API",
+    "source_url": "https://developers.google.com/flood-forecasting",
+    "downloads": [
+      {
+        "date": "2026-08-27T08:38:22.992022Z",
+        "parameters": {
+          "date_start": "2026-08-24 00:00",
+          "date_end": "2026-08-29 00:00"
+        }
+      },
+      {
+        "date": "2026-08-29T05:40:09.784629Z",
+        "parameters": {
+          "date_start": "2026-08-24 00:00",
+          "date_end": "2026-08-29 00:00"
+        }
+      }
+    ]
+  },
+  "infrastructure": {
+    "source_name": "OpenStreetMap",
+    "source_url": "https://www.openstreetmap.org",
+    "downloads": [
+      {
+        "date": "2026-08-27T08:44:55.722644Z",
+        "parameters": {
+          "overpass_query": "\n  [out:json][timeout:300][bbox:27.7, 84.9, 28.45, 85.85];\n  (\n    nwr[\"amenity\"=\"hospital\"];\n    nwr[\"aeroway\"=\"aerodrome\"];\n    nwr[\"amenity\"=\"school\"];\n    nwr[\"power\"=\"plant\"][\"plant:source\"=\"hydro\"];\n    nwr[\"waterway\"=\"dam\"];\n  );\n  out body center;\n  "
+        }
+      }
+    ]
+  }
+}

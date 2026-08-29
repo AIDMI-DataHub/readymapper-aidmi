@@ -1,0 +1,21 @@
+{
+ "buildings": {
+  "hot-fair":  { "label": "HOT fAIr (AI damage)", "updated": "2026-08-28" },
+  "emsr927":   { "label": "Copernicus EMSR927",   "updated": "2026-08-28" },
+  "microsoft": { "label": "Microsoft / UNOSAT",   "updated": "2026-08-27" },
+  "unosat":    { "label": "UNOSAT (affected)",    "updated": "2026-08-27" },
+  "osm":       { "label": "OSM destroyed",        "updated": "2026-08-29" }
+ },
+ "flood-extent": {
+  "hot":     { "label": "HOT observed",      "updated": "2026-08-27", "note": "corridor-wide observed ribbon" },
+  "emsr927": { "label": "Copernicus EMSR927", "updated": "2026-08-28", "note": "2 AOIs (Syabrubesi, Timure)" },
+  "unosat":  { "label": "UNOSAT Charter #1052", "updated": "2026-08-27", "note": "mudflow/rockflow extent, Rasuwa+Nuwakot · publ. 28 Aug" }
+ },
+ "bridges": {
+  "icimod":  { "label": "ICIMOD", "updated": "2026-08-27" },
+  "emsr927": { "label": "Copernicus EMSR927", "updated": "2026-08-28" }
+ },
+ "roads": {
+  "emsr927": { "label": "Copernicus EMSR927", "updated": "2026-08-28" }
+ }
+}
