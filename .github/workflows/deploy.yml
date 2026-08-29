@@ -50,7 +50,7 @@ jobs:
           # jq --arg keeps the token off the command line and out of the logs.
           jq -n --arg tok "$MAPBOX_TOKEN" \
             '{s3:{cloudfrontBaseUrl:"/readymapper-aidmi/data",outputFolder:"output"},
-              mapbox:{accessToken:$tok,styleUrl:"/readymapper-aidmi/basemap.json"}}' \
+              mapbox:{accessToken:$tok,styleUrl:"mapbox://styles/crisisready/cmmkzxpkm001401sbbnvxacig"}}' \
             > site/config.json
 
       - uses: actions/upload-pages-artifact@v3

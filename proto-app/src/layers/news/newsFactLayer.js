@@ -342,7 +342,7 @@ export function makeNewsLayer(table) {
         visibility: 'none',
         'text-field': ['case', ['>', ['get', '_count'], 1], ['to-string', ['get', '_count']], ''],
         'text-size': 11,
-        'text-font': ['literal', ['Noto Sans Bold']],
+        'text-font': ['literal', ['DIN Offc Pro Bold', 'Arial Unicode MS Bold']],
         'text-allow-overlap': true, 'text-ignore-placement': true,
       },
       paint: {
@@ -358,7 +358,7 @@ export function makeNewsLayer(table) {
         visibility: 'none',
         'text-field': ['get', '_typeLabel'],
         'text-size': 10,
-        'text-font': ['literal', ['Noto Sans Regular']],
+        'text-font': ['literal', ['DIN Offc Pro Medium', 'Arial Unicode MS Regular']],
         'text-offset': [0, 1.15], 'text-anchor': 'top', 'text-optional': true,
       },
       paint: {
