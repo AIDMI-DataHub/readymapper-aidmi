@@ -1,24 +1,25 @@
 {
  "note": "Derived from unplaced.csv + multi-district.csv + national.json for the News Sources report section.",
  "unplaced": {
-  "count": 36,
+  "count": 45,
   "by_geo_basis": {
    "not_stated": 6,
-   "text_explicit": 26,
+   "text_explicit": 35,
    "text_adjacent": 2,
    "gazetteer_match": 1,
    "inferred": 1
   },
   "by_admin_level": {
-   "district": 18,
-   "settlement": 18
+   "district": 22,
+   "settlement": 21,
+   "municipality": 2
   },
   "by_table": {
-   "people_aggregate": 8,
-   "aid_delivery": 1,
+   "people_aggregate": 10,
+   "aid_delivery": 2,
    "infrastructure": 5,
-   "access": 3,
-   "hazard_watch": 19
+   "access": 7,
+   "hazard_watch": 21
   },
   "examples": [
    {
@@ -64,15 +65,15 @@
   ]
  },
  "multi_district": {
-  "count": 43,
+  "count": 60,
   "by_table": {
    "people_aggregate": 14,
-   "aid_delivery": 7,
-   "infrastructure": 14,
-   "access": 1,
-   "hazard_watch": 3,
+   "aid_delivery": 10,
+   "infrastructure": 17,
+   "access": 3,
+   "hazard_watch": 12,
    "damage_extent": 4
   }
  },
- "national_count": 827
+ "national_count": 1002
 }
