@@ -42,6 +42,7 @@ export default createStore({
     // compact, report-ready summaries committed by the flood-impact loaders so the
     // Report components (which read Vuex, not the layers' module CACHE) can build tables
     buildingDamageSummary: {}, // { [srcKey]: {label,updated,metric,total,classes:{label:count}} }
+    buildingDamageTotal: null,  // cross-source de-duplicated total {union, naiveSum, maxLabel, max}
     roadDamageBySource: {},    // { [srcKey]: {updated, byName:[{name,grades,total}], byGrade:{grade:km}} }
     bridgeDamageBySource: {},  // { [srcKey]: {updated, bridges:[{name,status,location}], byStatus:{status:count}} }
     floodExtentData: {},       // { [srcKey]: FeatureCollection } — small polygons for the infra-in-perimeter query

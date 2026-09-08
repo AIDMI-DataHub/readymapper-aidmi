@@ -39,6 +39,9 @@
         :rows="buildingRows"
       />
       <p style="font-style: italic; font-size: 0.8em;">Map shows: {{ buildingSourceLabel }} · {{ buildingModeLabel }}.</p>
+      <p v-if="buildingDamageTotal" style="font-size: 0.8em;">
+        <b>Across all sources:</b> about {{ buildingDamageTotal.union.toLocaleString() }} distinct buildings are flagged as damaged once overlapping sources are merged. The sources use different methods and cover overlapping areas, so they are not additive — adding the columns above would double-count to {{ buildingDamageTotal.naiveSum.toLocaleString() }}. The most complete single source is {{ buildingDamageTotal.maxLabel }} ({{ buildingDamageTotal.max.toLocaleString() }}).
+      </p>
     </div>
 
     <div class="chunk" v-if="bridgeRows.length">
@@ -158,6 +161,7 @@
         'floodExtentSources',
         'floodExtentSource',
         'buildingDamageSummary',
+        'buildingDamageTotal',
         'buildingDamageSource',
         'buildingDamageMode',
         'bridgeDamageSources',

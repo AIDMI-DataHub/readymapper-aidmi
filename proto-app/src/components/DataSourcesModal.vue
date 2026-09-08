@@ -22,19 +22,19 @@
         <h3>Building damage</h3>
         <ul>
           <li><b>HOT fAIr (AI damage)</b> (28 Aug): automated, per-building damage class from AI.</li>
-          <li><b>Copernicus EMSR927</b> (28 Aug): rapid-mapping damage grades.</li>
+          <li><b>Copernicus EMSR927</b> (to 7 Sep): rapid-mapping damage grades across four areas.</li>
           <li><b>Microsoft / UNOSAT</b> (27 Aug): Microsoft building footprints tagged with UNOSAT's damage read (~4,977).</li>
           <li><b>UNOSAT (affected)</b> (27 Aug): UNOSAT's own affected-buildings layer (~4,983).</li>
           <li><b>OSM destroyed</b> (29 Aug): buildings tagged destroyed in OpenStreetMap.</li>
         </ul>
-        <p class="caveat"><b>"Microsoft / UNOSAT" and "UNOSAT (affected)" are near-duplicates of the same UNOSAT assessment</b> — they differ mainly in whose building geometry sits underneath, so don't add them together. Each source uses its own damage vocabulary; the HOT fAIr layer is AI-generated and unverified. Totals vary by source and method — compare, don't sum across sources.</p>
+        <p class="caveat"><b>"Microsoft / UNOSAT" and "UNOSAT (affected)" are near-duplicates of the same UNOSAT assessment</b> — they differ mainly in whose building geometry sits underneath, so don't add them together. Each source uses its own damage vocabulary; the HOT fAIr layer is AI-generated and unverified. Totals vary by source and method — compare, don't sum across sources.<span v-if="buildingDamageTotal"> Across all sources, about <b>{{ buildingDamageTotal.union.toLocaleString() }}</b> distinct buildings are flagged as damaged once the overlaps are merged; adding the sources would double-count to {{ buildingDamageTotal.naiveSum.toLocaleString() }}.</span></p>
       </section>
 
       <section>
         <h3>Bridges &amp; roads</h3>
         <ul>
-          <li><b>Bridges — ICIMOD</b> (27 Aug, field-reported) and <b>Copernicus EMSR927</b> (28 Aug).</li>
-          <li><b>Roads — Copernicus EMSR927</b> (28 Aug): damaged length by grade; undamaged stretches excluded.</li>
+          <li><b>Bridges — ICIMOD</b> (27 Aug, field-reported) and <b>Copernicus EMSR927</b> (to 7 Sep).</li>
+          <li><b>Roads — Copernicus EMSR927</b> (to 7 Sep): damaged length by grade; undamaged stretches excluded.</li>
         </ul>
         <p class="caveat">Statuses are normalised to one scale so sources can be compared; each source's original wording is kept in the marker pop-up.</p>
       </section>
@@ -73,7 +73,7 @@ export default {
   name: 'DataSourcesModal',
   components: { AppModal },
   computed: {
-    ...mapState(['dataSourcesModalVisible']),
+    ...mapState(['dataSourcesModalVisible', 'buildingDamageTotal']),
   },
   methods: {
     ...mapMutations(['setDataSourcesModalVisible']),

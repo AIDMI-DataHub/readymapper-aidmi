@@ -163,6 +163,31 @@ export const floodBuildingDamageLayer = {
       }
       summary[s.key] = { label: s.label, updated: updatedFor[s.key]?.updated || null, metric: hex.metric, total: individual.features.length, classes }
     }
+    // Cross-source de-duplicated total. The sources overlap heavily and use
+    // different methods, so summing them triple-counts; this counts distinct
+    // ~15 m locations flagged damaged (dmg > 0) by ANY source — the only honest
+    // "total across sources". naiveSum is published alongside to show the gap.
+    const GRID_LAT = 15 / 111320 // ~15 m in latitude degrees
+    const cells = new Set()
+    let naiveSum = 0
+    for (const s of SOURCES) {
+      const c = CACHE[s.key]
+      if (!c) continue
+      for (const f of c.individual.features) {
+        const dmg = f.properties?.dmg
+        if (!(typeof dmg === 'number' && dmg > 0)) continue
+        naiveSum++
+        const [x, y] = turf.centroid(f).geometry.coordinates
+        const gx = Math.round(x / (GRID_LAT / Math.cos(y * Math.PI / 180)))
+        const gy = Math.round(y / GRID_LAT)
+        cells.add(gx + ',' + gy)
+      }
+    }
+    const best = Object.values(summary).reduce((a, b) => (b.total > (a?.total ?? -1) ? b : a), null)
+    store.commit('setData', { buildingDamageTotal: cells.size
+      ? { union: cells.size, naiveSum, maxLabel: best?.label || null, max: best?.total || null }
+      : null })
+
     store.commit('setBuildingDamageSources', available)
     store.commit('setData', { buildingDamageSummary: summary })
     return CACHE
