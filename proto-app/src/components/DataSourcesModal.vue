@@ -12,7 +12,7 @@
         <h3>Observed flood extent</h3>
         <ul>
           <li><b>HOT — observed</b> (27 Aug): corridor-wide inundation ribbon from satellite imagery.</li>
-          <li><b>Copernicus EMSR927</b> (28 Aug): rapid mapping over two areas (Syabrubesi, Timure).</li>
+          <li><b>Copernicus EMSR927</b> (to 7 Sep): rapid mapping over four areas (Syabrubesi, Timure, Bidur, Phosretar), extended downstream.</li>
           <li><b>UNOSAT (Charter #1052)</b> (imagery 27 Aug, publ. 28 Aug): mudflow/rockflow extent across Rasuwa &amp; Nuwakot.</li>
         </ul>
         <p class="caveat">Each source maps a different footprint by a different method, so the extents don't match. "Observed" means where imagery happened to catch water or mud — not the full reach of the flood.</p>
